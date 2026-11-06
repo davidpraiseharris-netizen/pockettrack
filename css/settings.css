@@ -1,0 +1,168 @@
+/* PocketTrack Settings: currency, backup, import, danger zone. Tokens only. */
+
+.st { display: flex; flex-direction: column; gap: var(--s-5); }
+
+/* ---------- Card ---------- */
+.st-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  box-shadow: var(--shadow-sm);
+}
+.st-card-title {
+  margin: 0 0 var(--s-1);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--charcoal-900);
+}
+.st-card-sub {
+  margin: 0 0 var(--s-4);
+  font-size: var(--text-sm);
+  color: var(--charcoal-500);
+  line-height: 1.5;
+}
+
+/* ---------- Rows ---------- */
+.st-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) 0;
+  border-top: 1px solid var(--line);
+}
+.st-row:first-of-type { border-top: 0; padding-top: 0; }
+.st-row:last-child { padding-bottom: 0; }
+.st-row-main { flex: 1; min-width: 0; }
+.st-row-title {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--charcoal-900);
+}
+.st-row-sub {
+  margin: 2px 0 0;
+  font-size: var(--text-xs);
+  color: var(--charcoal-500);
+  line-height: 1.4;
+}
+
+/* ---------- Select ---------- */
+.st-select {
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--charcoal-900);
+  background: var(--bg);
+  border: 1.5px solid transparent;
+  border-radius: var(--r-md);
+  padding: var(--s-3) var(--s-4);
+  outline: 0;
+  max-width: 190px;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.st-select:focus {
+  background: var(--surface);
+  border-color: var(--emerald-500);
+}
+
+/* ---------- Buttons ---------- */
+.st-btn {
+  flex-shrink: 0;
+  border: 0;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--emerald-700);
+  background: var(--mint-100);
+  padding: var(--s-3) var(--s-5);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: background 0.2s var(--ease), transform 0.1s var(--ease);
+}
+.st-btn:hover { background: var(--mint-200); }
+.st-btn:active { transform: scale(0.97); }
+.st-btn.is-solid {
+  color: #fff;
+  background: var(--emerald-600);
+  box-shadow: var(--shadow-sm);
+}
+.st-btn.is-solid:hover { background: var(--emerald-700); }
+.st-btn.is-danger {
+  color: var(--expense);
+  background: #fbe9e7;
+}
+.st-btn.is-danger:hover { background: #f6d6d2; }
+.st-btn.is-danger-solid {
+  color: #fff;
+  background: var(--expense);
+}
+.st-btn.is-danger-solid:hover { background: #bd463d; }
+
+.st-file { display: none; }
+
+/* ---------- Storage note ---------- */
+.st-note {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  background: var(--mint-50);
+  border: 1px solid var(--mint-200);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  font-size: var(--text-sm);
+  color: var(--charcoal-700);
+  line-height: 1.5;
+}
+.st-note.is-warn {
+  background: #fdf0dc;
+  border-color: #f3d9a8;
+}
+.st-note-emoji { font-size: var(--text-lg); line-height: 1.2; }
+.st-note strong { color: var(--charcoal-900); }
+
+/* ---------- Counts (import preview) ---------- */
+.st-counts {
+  list-style: none;
+  margin: 0;
+  padding: var(--s-2) var(--s-4);
+  background: var(--bg);
+  border-radius: var(--r-md);
+}
+.st-counts li {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--s-2) 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--charcoal-500);
+}
+.st-counts li strong {
+  color: var(--charcoal-900);
+  font-weight: 800;
+}
+.st-confirm-text {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--charcoal-700);
+  line-height: 1.5;
+}
+
+/* ---------- Danger zone ---------- */
+.st-card.is-danger { border-color: #f0cdc9; }
+.st-card.is-danger .st-card-title { color: var(--expense); }
+
+/* ---------- About ---------- */
+.st-about {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--charcoal-500);
+  padding: var(--s-2) 0 var(--s-4);
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 900px) {
+  .st { max-width: 680px; }
+}

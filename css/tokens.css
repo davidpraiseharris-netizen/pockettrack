@@ -1,0 +1,75 @@
+/* PocketTrack design tokens. Change a value here and it changes everywhere. */
+:root {
+  /* Emerald */
+  --emerald-900: #063d2e;
+  --emerald-700: #0a6b4f;
+  --emerald-600: #0b8a62;
+  --emerald-500: #12a874;
+
+  /* Mint */
+  --mint-300: #8ee3bc;
+  --mint-200: #bdf0d8;
+  --mint-100: #dff8ec;
+  --mint-50: #f0fcf6;
+
+  /* Soft charcoal */
+  --charcoal-900: #1e2523;
+  --charcoal-700: #3a4440;
+  --charcoal-500: #66726d;
+  --charcoal-300: #b4bdb9;
+
+  /* Surfaces */
+  --bg: #f4f7f5;
+  --surface: #ffffff;
+  --line: #e3eae6;
+
+  /* Meaning */
+  --income: #0b8a62;
+  --expense: #d4544a;
+  --warning: #e0952b;
+
+  /* Category colors (charts and icons later) */
+  --cat-1: #0b8a62;
+  --cat-2: #3fc79a;
+  --cat-3: #e0952b;
+  --cat-4: #d4544a;
+  --cat-5: #4c7fd8;
+  --cat-6: #8a6fd1;
+  --cat-7: #d6609b;
+  --cat-8: #7a8a84;
+
+  /* Type */
+  --font: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+
+  /* Spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+
+  /* Shape */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+
+  /* Shadows (tinted emerald, not plain grey) */
+  --shadow-sm: 0 1px 2px rgba(6, 61, 46, 0.05), 0 4px 14px rgba(6, 61, 46, 0.05);
+  --shadow-md: 0 8px 28px rgba(6, 61, 46, 0.12);
+  --shadow-fab: 0 10px 24px rgba(10, 107, 79, 0.35);
+
+  /* Layout */
+  --nav-h: 64px;
+  --sidebar-w: 256px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

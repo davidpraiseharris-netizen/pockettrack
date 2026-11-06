@@ -1,0 +1,301 @@
+/* PocketTrack Dashboard styles. Uses tokens from tokens.css only. */
+
+.db { display: flex; flex-direction: column; gap: var(--s-5); }
+
+/* ---------- Period filter ---------- */
+.db-filters {
+  display: flex;
+  gap: var(--s-2);
+  padding: var(--s-1);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  box-shadow: var(--shadow-sm);
+}
+.db-filter {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--charcoal-500);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.db-filter:hover { color: var(--charcoal-900); }
+.db-filter.is-active {
+  background: var(--emerald-600);
+  color: #fff;
+}
+
+/* ---------- Balance card ---------- */
+.db-balance {
+  position: relative;
+  overflow: hidden;
+  padding: var(--s-6);
+  border-radius: var(--r-lg);
+  color: #fff;
+  background: linear-gradient(135deg, var(--emerald-900), var(--emerald-600));
+  box-shadow: var(--shadow-md);
+}
+.db-balance::after {
+  content: "";
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(142, 227, 188, 0.35), transparent 70%);
+  pointer-events: none;
+}
+.db-balance-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--mint-200);
+  margin: 0 0 var(--s-2);
+}
+.db-balance-amount {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.1;
+}
+.db-balance-sub {
+  margin: var(--s-3) 0 0;
+  font-size: var(--text-xs);
+  color: var(--mint-200);
+}
+
+/* ---------- Stat cards ---------- */
+.db-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-3);
+}
+.db-stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+.db-stat:last-child { grid-column: 1 / -1; }
+.db-stat-top {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-2);
+}
+.db-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-sm);
+  background: var(--mint-100);
+  color: var(--income);
+}
+.db-stat-icon svg { width: 16px; height: 16px; }
+.db-stat.is-expense .db-stat-icon {
+  background: #fbe9e7;
+  color: var(--expense);
+}
+.db-stat-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--charcoal-500);
+}
+.db-stat-value {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--charcoal-900);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.db-stat.is-income .db-stat-value { color: var(--income); }
+.db-stat.is-expense .db-stat-value { color: var(--expense); }
+.db-stat-value.is-negative { color: var(--expense); }
+
+/* ---------- Generic card ---------- */
+.db-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  box-shadow: var(--shadow-sm);
+}
+.db-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--s-4);
+}
+.db-card-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--charcoal-900);
+  margin: 0;
+}
+.db-link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--emerald-600);
+  text-decoration: none;
+}
+.db-link:hover { color: var(--emerald-700); text-decoration: underline; }
+
+/* ---------- Donut chart ---------- */
+.db-donut-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-5);
+}
+.db-donut {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+.db-donut svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.db-donut-track { stroke: var(--line); }
+.db-donut-seg {
+  transition: stroke-dasharray 0.6s var(--ease);
+}
+.db-donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 var(--s-8);
+}
+.db-donut-center small {
+  font-size: var(--text-xs);
+  color: var(--charcoal-500);
+  font-weight: 600;
+}
+.db-donut-center strong {
+  font-size: var(--text-base);
+  font-weight: 800;
+  color: var(--charcoal-900);
+  overflow-wrap: anywhere;
+}
+
+.db-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.db-legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--text-sm);
+}
+.db-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.db-legend-name {
+  flex: 1;
+  color: var(--charcoal-700);
+  font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.db-legend-pct {
+  color: var(--charcoal-500);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+.db-legend-amt {
+  color: var(--charcoal-900);
+  font-weight: 700;
+}
+
+/* ---------- Recent transactions ---------- */
+.db-tx-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.db-tx {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--line);
+}
+.db-tx:last-child { border-bottom: 0; padding-bottom: 0; }
+.db-tx:first-child { padding-top: 0; }
+.db-tx-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-md);
+  display: grid;
+  place-items: center;
+  font-size: var(--text-sm);
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+.db-tx-main { flex: 1; min-width: 0; }
+.db-tx-title {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--charcoal-900);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.db-tx-meta {
+  margin: 2px 0 0;
+  font-size: var(--text-xs);
+  color: var(--charcoal-500);
+}
+.db-tx-amt {
+  font-size: var(--text-sm);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.db-tx-amt.is-income { color: var(--income); }
+.db-tx-amt.is-expense { color: var(--expense); }
+
+/* ---------- Desktop ---------- */
+@media (min-width: 900px) {
+  .db-filters { align-self: flex-start; }
+  .db-filter { flex: none; padding: var(--s-2) var(--s-5); }
+  .db-stats { grid-template-columns: repeat(3, 1fr); }
+  .db-stat:last-child { grid-column: auto; }
+  .db-balance-amount { font-size: 2.5rem; }
+  .db-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-5);
+    align-items: start;
+  }
+  .db-donut-wrap { flex-direction: row; }
+  .db-legend { flex: 1; }
+}
